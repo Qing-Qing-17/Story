@@ -1,0 +1,1400 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <title>觀世音菩薩傳 × 探索人生問題的讀書會</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --bg-main: #f7f2e9;
+      --bg-card: #ffffff;
+      --accent: #d9b980;
+      --accent-soft: #e6cfa0;
+      --accent-green: #8fb9a8;
+      --accent-teal: #7fb5b5;
+      --text-main: #333333;
+      --text-muted: #666666;
+      --shadow-soft: 0 10px 25px rgba(0, 0, 0, 0.08);
+      --radius-lg: 18px;
+      --radius-xl: 24px;
+      --transition-fast: 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "PingFang TC",
+        "Noto Sans TC", "Microsoft JhengHei", sans-serif;
+      background: radial-gradient(circle at top, #fdf8ef 0%, #f5efe4 60%, #f3f0ea 100%);
+      color: var(--text-main);
+      line-height: 1.7;
+    }
+
+    .page {
+      max-width: 960px;
+      margin: 0 auto;
+      padding: 16px 16px 60px;
+    }
+
+    .hero {
+      background: linear-gradient(
+        135deg,
+        rgba(223, 200, 146, 0.2),
+        rgba(127, 181, 181, 0.16)
+      );
+      border-radius: var(--radius-xl);
+      padding: 28px 22px 30px;
+      box-shadow: var(--shadow-soft);
+      margin-top: 12px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      right: -40px;
+      top: -40px;
+      width: 160px;
+      height: 160px;
+      background: radial-gradient(circle, rgba(255, 255, 255, 0.8), transparent);
+      opacity: 0.7;
+    }
+
+    .hero h1 {
+      font-size: 1.7rem;
+      margin: 0 0 10px;
+      letter-spacing: 0.06em;
+    }
+
+    .hero h2 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin: 0 0 16px;
+      color: var(--text-muted);
+    }
+
+    .hero p {
+      margin: 0 0 18px;
+      font-size: 0.96rem;
+    }
+
+    .hero-btn-wrapper {
+      text-align: center;
+      margin-top: 10px;
+    }
+
+    a.hero-scroll-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-size: 0.98rem;
+      letter-spacing: 0.08em;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+      transition: transform var(--transition-fast), box-shadow var(--transition-fast),
+        background var(--transition-fast);
+    }
+
+    a.hero-scroll-btn:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+      background: #c89c5c;
+    }
+
+    .section {
+      margin-top: 28px;
+    }
+
+    .section h2 {
+      font-size: 1.3rem;
+      margin-bottom: 8px;
+    }
+
+    .section > p.section-intro {
+      margin-top: 0;
+      margin-bottom: 12px;
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .card-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .card {
+      background: var(--bg-card);
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 14px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(217, 185, 128, 0.2);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-top: 0;
+      margin-bottom: 8px;
+    }
+
+    .card ul {
+      padding-left: 18px;
+      margin: 8px 0 0;
+      font-size: 0.92rem;
+    }
+
+    .card ul li {
+      margin-bottom: 4px;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: rgba(143, 185, 168, 0.12);
+      color: #4d7162;
+      font-size: 0.8rem;
+      margin-bottom: 6px;
+    }
+
+    .tag span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #4d7162;
+      display: inline-block;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 10px 22px;
+      border-radius: 999px;
+      border: none;
+      cursor: pointer;
+      font-size: 0.96rem;
+      letter-spacing: 0.08em;
+      text-align: center;
+      transition: background var(--transition-fast), transform var(--transition-fast),
+        box-shadow var(--transition-fast), opacity var(--transition-fast);
+      margin-top: 12px;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #fff;
+      box-shadow: 0 8px 18px rgba(0, 0, 0, 0.12);
+    }
+
+    .btn-primary:hover {
+      background: #c89c5c;
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
+    }
+
+    .btn-ghost {
+      background: rgba(255, 255, 255, 0.9);
+      color: var(--accent-teal);
+      border: 1px solid rgba(127, 181, 181, 0.8);
+      box-shadow: 0 3px 10px rgba(127, 181, 181, 0.15);
+    }
+
+    .btn:disabled {
+      opacity: 0.6;
+      cursor: default;
+      box-shadow: none;
+      transform: none;
+    }
+
+    .centered-btn {
+      text-align: center;
+      margin-top: 18px;
+    }
+
+    .hidden {
+      display: none !important;
+    }
+
+    .fade-in {
+      animation: fadeInUp 0.45s ease-out;
+    }
+
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .story-section-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 6px;
+      margin-bottom: 10px;
+    }
+
+    .story-section-header p {
+      margin: 0;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .story-progress {
+      font-size: 0.9rem;
+      color: var(--accent-green);
+      font-weight: 500;
+    }
+
+    .story-card {
+      margin-top: 12px;
+    }
+
+    .story-card .story-meta {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 4px;
+    }
+
+    .story-card .story-content p {
+      margin: 6px 0;
+      font-size: 0.93rem;
+    }
+
+    .story-card .story-content p span.label {
+      font-weight: 600;
+      color: #577f73;
+      margin-right: 2px;
+    }
+
+    .story-card.completed {
+      opacity: 0.72;
+    }
+
+    .story-card.completed .btn-primary.story-next-btn {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    .story-clue {
+      background: rgba(255, 255, 255, 0.7);
+      border-radius: 14px;
+      padding: 10px 12px;
+      border: 1px dashed rgba(127, 181, 181, 0.5);
+      font-size: 0.9rem;
+      margin-top: 6px;
+      cursor: pointer;
+      position: relative;
+    }
+
+    .story-clue-intro {
+      margin: 2px 0 6px;
+      font-size: 0.86rem;
+      color: #5e7f7f;
+    }
+
+    .story-clue-detail {
+      margin: 4px 0;
+    }
+
+    .story-clue-detail span {
+      font-weight: 600;
+      color: #4d7162;
+    }
+
+    .story-clue-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    .story-clue .centered-btn {
+      margin-top: 10px;
+    }
+
+    .vevox-layout {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      align-items: center;
+    }
+
+    .vevox-text {
+      flex: 2 1 240px;
+    }
+
+    .vevox-qr {
+      flex: 1 1 180px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .qr-placeholder {
+      width: 180px;
+      height: 180px;
+      border-radius: 24px;
+      border: 2px dashed rgba(143, 185, 168, 0.8);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      background: rgba(255, 255, 255, 0.9);
+    }
+
+    .steps {
+      margin: 10px 0 0;
+      padding-left: 18px;
+      font-size: 0.93rem;
+    }
+
+    .steps li {
+      margin-bottom: 4px;
+    }
+
+    .question-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-xl);
+      padding: 18px 18px 16px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(127, 181, 181, 0.25);
+      margin-top: 10px;
+    }
+
+    .question-card h3 {
+      margin-top: 0;
+      margin-bottom: 6px;
+      font-size: 1rem;
+      letter-spacing: 0.12em;
+      color: #567d7d;
+    }
+
+    .question-main {
+      font-size: 1.02rem;
+      margin: 4px 0 10px;
+    }
+
+    .question-hint {
+      font-size: 0.88rem;
+      color: var(--text-muted);
+      margin: 0;
+    }
+
+    .vevox-hint {
+      font-size: 0.82rem;
+      color: var(--accent-teal);
+      margin-top: 6px;
+    }
+
+    .final-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-xl);
+      padding: 18px 18px 18px;
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(217, 185, 128, 0.28);
+    }
+
+    .write-zone {
+      margin-top: 14px;
+      padding: 18px 14px;
+      border-radius: 18px;
+      border: 2px dashed rgba(143, 185, 168, 0.6);
+      background: rgba(255, 255, 255, 0.9);
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-size: 0.95rem;
+      color: var(--text-muted);
+    }
+
+    .write-icon {
+      font-size: 1.6rem;
+      opacity: 0.8;
+    }
+
+    .final-footer {
+      margin-top: 12px;
+      font-size: 0.84rem;
+      color: #7f8a86;
+      text-align: right;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 14px 10px 40px;
+      }
+
+      .hero {
+        padding: 22px 16px 24px;
+        border-radius: 18px;
+      }
+
+      .hero h1 {
+        font-size: 1.4rem;
+      }
+
+      .hero h2 {
+        font-size: 1rem;
+      }
+
+      .hero p {
+        font-size: 0.98rem;
+      }
+
+      body {
+        font-size: 1rem;
+      }
+
+      .card {
+        padding: 14px 12px;
+      }
+
+      .question-card,
+      .final-card {
+        padding: 16px 14px;
+      }
+
+      .btn {
+        width: 100%;
+        padding: 11px 18px;
+        font-size: 0.98rem;
+      }
+
+      .qr-placeholder {
+        width: 150px;
+        height: 150px;
+      }
+
+      .write-zone {
+        flex-direction: row;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <!-- 頂部 Hero 區 -->
+    <header id="top" class="hero">
+      <h1>觀世音菩薩傳 × 探索人生問題的讀書會</h1>
+      <h2>從故事走進自己：看見煩惱、情緒與成長的可能</h2>
+      <p>
+        今天帶你回顧《觀世音菩薩傳》第26～34回的故事，看菩薩如何化身不同樣貌、法相，對應眾生不同的煩惱與迷茫。故事之後，會用即時互動（Vevox）一起分享：找到我們現在正卡在人生的哪個階段、哪一個狀態與哪一個疑問中？
+      </p>
+      <div class="hero-btn-wrapper">
+        <a href="#prequel" class="hero-scroll-btn">往下滑，先複習故事背景</a>
+      </div>
+    </header>
+
+    <main>
+      <!-- 區塊 A：前情提要 -->
+      <section id="prequel" class="section">
+        <h2>前情提要：從妙善成道到魚籃觀音（第26～28回）</h2>
+        <p class="section-intro">
+          先從三個節點回望：妙善如何成為觀世音，菩薩又如何在不同地方示現，對應人心的乾涸、迷惘與情欲牽絆。
+        </p>
+        <div class="card-grid">
+          <article class="card">
+            <div class="tag"><span class="dot"></span>第26回：妙善成道</div>
+            <h3>一棒敲開的新起點</h3>
+            <ul>
+              <li>背景：妙莊王三公主妙善歷經苦行，在玲瓏閣跏趺入定，受到沈英一棒敲擊，「當頭棒喝」，肉身坐化。</li>
+              <li>發生：眾人以為被打傷，卻見紅光升起，化現出赤腳、手捧淨瓶楊枝的法相，乘雲而去。</li>
+              <li>法相：大慈大悲、尋聲救苦的觀世音菩薩正式成就，往南海普陀落伽山安住。</li>
+              <!-- <li>意義：有時「意外的一棒」是生命的轉機，打破舊殼，進入新階段。</li> -->
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="tag"><span class="dot"></span>第27回：南海普陀落伽山與太室山降甘霖</div>
+            <h3>托缽丐婦與太室山甘霖</h3>
+            <ul>
+              <li>背景：觀音在南海證道後，聽聞沙門跋陀在中土傳法不利，眾生苦厄多、戰亂頻仍、少有人信佛。</li>
+              <li>發生：觀音化為「托缽丐婦」，在太室山附近行化，指出「水旱雖是天災，其根在於人心不善」，並與紗門跋陀約定隔日午時示現法相。</li>
+              <li>法相顯現：太室山上白雲開處，現「聖觀自在菩薩」金身，手持淨瓶柳枝，向四方田地灑甘露，甘霖大雨解除旱災。</li>
+              <li>意義：當我們發現自己有過錯的時候，趕快改過，一份誠心勝過以往所造之惡業</li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <div class="tag"><span class="dot"></span>第28回：魚籃觀音與馬郎婦</div>
+            <h3>魚籃與情感中的法門</h3>
+            <ul>
+              <li>背景：觀音憐憫東海一帶島民愚蒙、殺生為業，遂化身「美麗漁婦」，手提魚籃入市賣魚。</li>
+              <li>發生：她只願將魚賣給要「放生」的人，眾人笑她癡傻；但因為他實在美麗動人，都生了愛慕之心，故又以「背誦《普門品》《金剛經》《法華經》」為條件，揀選願意用心修行的人。</li>
+              <li>法相：最後與「馬郎」結下法緣，被稱為「魚籃觀音」「馬郎婦觀音」</li>
+              <!-- <li>意義：我們常為外在的酒色財氣所迷惑，但真正了悟的是能否。</li> -->
+            </ul>
+          </article>
+        </div>
+
+        <div class="centered-btn">
+          <button id="enter-story-btn" class="btn btn-primary">
+            進入今天的故事（第29～34回）
+          </button>
+        </div>
+      </section>
+
+      <!-- 區塊 B：故事分段區塊 -->
+      <section id="stories-section" class="section hidden">
+        <div class="story-section-header">
+          <div>
+            <h2>主線故事 × 法相 × 寓意（第29～34回）</h2>
+            <p>一步一步，看見不同法相，對照我們的生命處境。</p>
+          </div>
+          <p id="story-progress" class="story-progress">故事 1 / 13</p>
+        </div>
+
+        <!-- 故事卡片 1～13 -->
+        <article class="card story-card hidden fade-in">
+          <div class="story-meta">故事 1：蛤蜊觀音 —— 貢蛤蜊與被壓榨的漁民</div>
+          <div class="story-clue" data-step="0">
+            <p class="story-clue-intro">輕點此區，依序揭開：關鍵詞 → 關鍵人物 → 觸發事件。</p>
+            <p class="story-clue-detail detail-keyword hidden">
+              <span>關鍵詞：</span>皇帝、壓榨、蛤蜊殼
+            </p>
+            <p class="story-clue-detail detail-people hidden">
+              <span>關鍵人物：</span>唐文宗、寧波漁民、貪官
+            </p>
+            <p class="story-clue-detail detail-trigger hidden">
+              <span>觸發事件：</span>為滿足皇帝口腹，下詔大量進貢蛤蜊，並且有許多貪官，造成民不聊生。
+            </p>
+            <p class="story-clue-note hidden">
+              線索已全部顯示，可點下方按鈕展開完整故事。
+            </p>
+            <div class="centered-btn">
+              <button class="btn btn-ghost clue-next-btn hidden">展開完整故事</button>
+            </div>
+          </div>
+          <div class="story-content hidden">
+            <p><span class="label">① 背景：</span>唐文宗嗜吃蛤蜊，下詔寧波一帶大量進貢，地方官差藉機勒索，漁民一年到頭為貢物奔波、被剝削得家破人亡。</p>
+            <p><span class="label">② 事件：</span>觀音在海灘用法力將自己的法相印入蛤蜊。這批蛤蜊進宮後，御廚剖開，見殼內不是蛤肉，而是晶瑩的觀音像，皇帝驚醒。</p>
+            <p><span class="label">③ 法相名稱：</span>蛤蜊觀音。文宗因此下令罷貢蛤蜊、禁食此物，並敕建觀音殿。</p>
+			<p><span class="label">④ 寓意：</span>一個人的「嗜好」可能壓垮很多人；提醒我們檢查自己的欲望會不會傷害別人，也鼓勵被壓迫的人相信：不義的結構終將被看見。</p>
+			<p><span class="label">故事簡述：</span>
+				皇帝愛吃蛤蜊，愛到地方官逼漁民全年捕撈。
+				有人欠債，有人累死，
+				大家都在幫皇帝滿足「嘴巴的快樂」。
+				觀音沒有怒，也沒有責備，
+				她只是靜靜地把自己的法相印在蛤蜊裡。
+				當蛤蜊被送進宮、剖開的瞬間——
+				裡面不是蛤肉，而是一尊觀音像。
+				皇帝立刻停貢。</p>
+			<p><span class="label">進一步思考：</span>自己現在是否有看似微小的嗜好，但有可能會影響到其他人呢?</p>
+            <div class="centered-btn">
+              <button class="btn btn-primary story-next-btn">下一個故事</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card story-card hidden">
+          <div class="story-meta">故事 2：施藥觀音 —— 瘟疫中的賣藥老叟</div>
+          <div class="story-clue" data-step="0">
+            <p class="story-clue-intro">輕點此區，依序揭開：關鍵詞 → 關鍵人物 → 觸發事件。</p>
+            <p class="story-clue-detail detail-keyword hidden">
+              <span>關鍵詞：</span>登州、藿香、盛夏
+            </p>
+            <p class="story-clue-detail detail-people hidden">
+              <span>關鍵人物：</span>登州百姓、賣藥老叟（觀音）、庸醫
+            </p>
+            <p class="story-clue-detail detail-trigger hidden">
+              <span>觸發事件：</span>疫病流行、醫者無方，百姓大量病死，人人陷入恐懼無助。
+            </p>
+            <p class="story-clue-note hidden">
+              線索已全部顯示，可點下方按鈕展開完整故事。
+            </p>
+            <div class="centered-btn">
+              <button class="btn btn-ghost clue-next-btn hidden">展開完整故事</button>
+            </div>
+          </div>
+          <div class="story-content hidden">
+            <p><span class="label">① 背景：</span>登州爆發疫病，庸醫無方，百姓死傷相繼。</p>
+            <p><span class="label">② 事件：</span>觀音化身賣藥老叟，主動施藥；特別以「藿香」為方，救了大量病人，直到疫氣全消才顯示真身，並留下治病的方法。</p>
+            <p><span class="label">③ 法相名稱：</span>施藥觀音（手持藥草）。</p>
+            <p><span class="label">④ 寓意：</span>真正的慈悲不在於表面安慰，而是願意踏入「很髒、很亂、很痛的地方」實際幫人。也提醒我們，有病要面對，不要死撐。</p>
+			<p><span class="label">故事簡述：</span>
+				大瘟疫爆發，醫生都束手無策。
+				觀音化身成一位賣藥老人，
+				背著藿香，一戶戶敲門、施藥、救人。
+				最髒、最臭、最危險的地方，
+				他走得比誰都快。
+
+				等疫情好轉，他才顯露真身，
+				把藥方留給世人。</p>
+            <div class="centered-btn">
+			<p><span class="label">進一步思考：</span>真正的關心是什麼呢?你願意這樣做嗎?</p>
+              <button class="btn btn-primary story-next-btn">下一個故事</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card story-card hidden">
+          <div class="story-meta">故事 3：不肯去觀音 —— 玉觀音不隨外族而去</div>
+          <div class="story-clue" data-step="0">
+            <p class="story-clue-intro">輕點此區，依序揭開：關鍵詞 → 關鍵人物 → 觸發事件。</p>
+            <p class="story-clue-detail detail-keyword hidden">
+              <span>關鍵詞：</span>白玉寶像、東夷偷像、海面蓮花迷航
+            </p>
+            <p class="story-clue-detail detail-people hidden">
+              <span>關鍵人物：</span>五臺山法華寺僧眾、東夷國人、普陀潮音洞信眾
+            </p>
+            <p class="story-clue-detail detail-trigger hidden">
+              <span>觸發事件：</span>東夷國人覬覦白玉觀音，暗中偷走，企圖運回本國供奉。
+            </p>
+            <p class="story-clue-note hidden">
+              線索已全部顯示，可點下方按鈕展開完整故事。
+            </p>
+            <div class="centered-btn">
+              <button class="btn btn-ghost clue-next-btn hidden">展開完整故事</button>
+            </div>
+          </div>
+          <div class="story-content hidden">
+            <p><span class="label">① 背景：</span>五臺山法華寺有一尊白玉觀音，東夷國人覬覦寶像，偷走準備運回國。</p>
+            <p><span class="label">② 事件：</span>觀音在普陀山蓮花洋化現蓮花遍佈海面，使賊船迷失方向、風浪大作。東夷驚懼，願將玉像留在潮音洞供奉。</p>
+            <p><span class="label">③ 法相名稱：</span>不肯去觀音（持蓮觀音，留在普陀）。</p>
+            <p><span class="label">④ 寓意：</span>不隨「名利」「權勢」而走，選擇留在真正需要之處；對青年來說，是問自己：我要追的是光鮮的頭銜，還是真正想守護的價值與人？</p>
+			<p><span class="label">故事簡述：</span>
+				外國人偷走五臺山的白玉觀音，
+				準備運回國。
+				結果一出海浪狂炸，蓮花遍布海面。
+				他們一抬頭，看見觀音站在山巔，
+				安靜地看著他們。
+				他們嚇到跪下，把玉像留下來供奉。
+
+				所以她叫「不肯去觀音」。</p>
+            <div class="centered-btn">
+			<p><span class="label">進一步思考：</span>真正珍貴難得的是什麼呢?寶物?還是玉像?還是?</p>
+            <div class="centered-btn">
+              <button class="btn btn-primary story-next-btn">下一個故事</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card story-card hidden">
+          <div class="story-meta">故事 4：千手千眼觀音 × 錢鏐夢中點悟 × 持經觀音</div>
+          <div class="story-clue" data-step="0">
+            <p class="story-clue-intro">輕點此區，依序揭開：關鍵詞 → 關鍵人物 → 觸發事件。</p>
+            <p class="story-clue-detail detail-keyword hidden">
+              <span>關鍵詞：</span>戰亂江南、夢中千手千眼、看經庵
+            </p>
+            <p class="story-clue-detail detail-people hidden">
+              <span>關鍵人物：</span>錢鏐、江南百姓、千手千眼觀音
+            </p>
+            <p class="story-clue-detail detail-trigger hidden">
+              <span>觸發事件：</span>錢鏐雖起兵護民，卻因害怕犯錯與責任太重而猶豫不決。
+            </p>
+            <p class="story-clue-note hidden">
+              線索已全部顯示，可點下方按鈕展開完整故事。
+            </p>
+            <div class="centered-btn">
+              <button class="btn btn-ghost clue-next-btn hidden">展開完整故事</button>
+            </div>
+          </div>
+          <div class="story-content hidden">
+            <p><span class="label">① 背景：</span>唐末戰亂，錢鏐起兵，本意為保護江南百姓，但猶豫、害怕犯錯。</p>
+            <p><span class="label">② 事件：</span>觀音在夢中示現千手千眼法相，並告訴他：「千般手眼只在一人」，勸他為大眾擔起責任。後來他真的成功保護一方。</p>
+            <p><span class="label">③ 法相延伸：</span>錢鏐在天竺山為觀音建「看經庵」，供奉手持經卷的「持經觀音」。</p>
+            <p><span class="label">④ 寓意：</span>千手千眼不只是神通，也象徵「多重角色與責任」。剛出社會的我們，常同時是子女、員工、學習者、領袖，關鍵不是逃，而是找到自己願意扛起的是什麼。</p>
+			<p><span class="label">故事簡述：</span>
+				錢鏐是年輕將領，常常怕做錯、怕害人。
+				觀音在夢裡示現千手千眼，
+				對他說：
+
+				「當你願意為眾生扛，
+				你身上的每一隻手都是力量，
+				不是負擔。」
+
+				錢鏐醒來後，
+				不再是「替自己爭」的將領，
+				而是「替百姓守護」的領袖。</p>
+            <div class="centered-btn">
+			<p><span class="label">進一步思考：</span>你願意背負救渡眾生的使命嗎?</p>
+            <div class="centered-btn">
+              <button class="btn btn-primary story-next-btn">下一個故事</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card story-card hidden">
+          <div class="story-meta">故事 5：馬頭觀音與六觀音 —— 求那跋陀的啟示</div>
+          <div class="story-clue" data-step="0">
+            <p class="story-clue-intro">輕點此區，依序揭開：關鍵詞 → 關鍵人物 → 觸發事件。</p>
+            <p class="story-clue-detail detail-keyword hidden">
+              <span>關鍵詞：</span>九華山面壁、馬頭、六道輪迴
+            </p>
+            <p class="story-clue-detail detail-people hidden">
+              <span>關鍵人物：</span>求那跋陀、馬頭觀音、六觀音
+            </p>
+            <p class="story-clue-detail detail-trigger hidden">
+              <span>觸發事件：</span>求那跋陀發願弘傳大乘，卻因語言不通而深感挫折，只能退入山中誦經。
+            </p>
+            <p class="story-clue-note hidden">
+              線索已全部顯示，可點下方按鈕展開完整故事。
+            </p>
+            <div class="centered-btn">
+              <button class="btn btn-ghost clue-next-btn hidden">展開完整故事</button>
+            </div>
+          </div>
+          <div class="story-content hidden">
+            <p><span class="label">① 背景：</span>罽賓國王子求那跋陀出家，發願將大乘佛法帶入中土，因語言不通，退入九華山面壁誦經。</p>
+            <p><span class="label">② 事件：</span>觀音在定中示現，頂上現馬頭，並藉此開示六道輪迴，說明六尊觀音各主一「道」：地獄、餓鬼、畜生、人、阿修羅、天。</p>
+            <p><span class="label">③ 法相：</span>馬頭觀音為「畜牲道教主」，另有大悲觀音、聖觀音、獅子無畏觀音、準提觀音、如意輪觀音等。</p>
+            <p><span class="label">④ 寓意：</span>我們內心每天在「六道之間」輪轉：有時像地獄（痛苦）、有時像餓鬼（永不滿足）、有時像修羅（嫉妒爭勝）。覺察自己今天的起心動念，是改變的開始。</p>
+			<p><span class="label">故事簡述：</span>
+				求那跋陀修行遇瓶頸，
+				觀音示現六道——
+				地獄、餓鬼、畜生、人、阿修羅、天。
+				並告訴他：
+
+				「六道不是死後，是每天的心境。」
+
+				焦慮像地獄、
+				不滿像餓鬼、
+				渾噩像畜生、
+				比較像阿修羅……</p>
+            <div class="centered-btn">
+			<p><span class="label">進一步思考：</span>你每天都有使用三寶、都有時時刻刻覺察自己的想法是否是正之正見呢?</p>
+            <div class="centered-btn">
+              <button class="btn btn-primary story-next-btn">下一個故事</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card story-card hidden">
+          <div class="story-meta">故事 6：阿摩提怒目觀音 —— 少林寺退紅巾軍</div>
+          <div class="story-clue" data-step="0">
+            <p class="story-clue-intro">輕點此區，依序揭開：關鍵詞 → 關鍵人物 → 觸發事件。</p>
+            <p class="story-clue-detail detail-keyword hidden">
+              <span>關鍵詞：</span>紅巾軍、少林寺、鐵棍
+            </p>
+            <p class="story-clue-detail detail-people hidden">
+              <span>關鍵人物：</span>李全、廚房僧人、阿摩提觀音
+            </p>
+            <p class="story-clue-detail detail-trigger hidden">
+              <span>觸發事件：</span>李全欲招降少林僧人遭拒，一怒之下率軍重重包圍少林寺。
+            </p>
+            <p class="story-clue-note hidden">
+              線索已全部顯示，可點下方按鈕展開完整故事。
+            </p>
+            <div class="centered-btn">
+              <button class="btn btn-ghost clue-next-btn hidden">展開完整故事</button>
+            </div>
+          </div>
+          <div class="story-content hidden">
+            <p><span class="label">① 背景：</span>紅巾軍李全作亂，中原百姓顛沛流離；李全想招降少林寺僧人，遭拒後大怒圍山。</p>
+            <p><span class="label">② 事件：</span>觀音化身廚房燒火的僧人，持鐵棍衝入敵陣，打敗主將李全，救下少林與附近百姓。</p>
+            <p><span class="label">③ 法相名稱：</span>阿摩提觀音（怒目、持棍，威猛相）。</p>
+            <p><span class="label">④ 寓意：</span>慈悲不是軟弱，有時需要有智慧判斷哪些事情該做，哪些事情不該做，哪些事情要制止，要活潑玲瓏地應對。</p>
+			<p><span class="label">故事簡述：</span>
+				紅巾軍攻打少林寺。
+				觀音這次不是溫柔版本，
+				她化身成燒火的小和尚，
+				提著鐵棍衝入敵陣，
+				幾合就把敵方將領擊倒。
+
+				少林人後來知道原來是觀音救的，
+				便塑了怒目的阿摩提觀音。</p>
+            <div class="centered-btn">
+			<p><span class="label">進一步思考：</span>我們該如何常保智慧，才能活潑應事呢?</p>
+            <div class="centered-btn">
+              <button class="btn btn-primary story-next-btn">下一個故事</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card story-card hidden">
+          <div class="story-meta">故事 7：寶鏡三面觀音 —— 照出真心的銅鏡</div>
+          <div class="story-clue" data-step="0">
+            <p class="story-clue-intro">輕點此區，依序揭開：關鍵詞 → 關鍵人物 → 觸發事件。</p>
+            <p class="story-clue-detail detail-keyword hidden">
+              <span>關鍵詞：</span>照心寶鏡、三文錢、三面觀音
+            </p>
+            <p class="story-clue-detail detail-people hidden">
+              <span>關鍵人物：</span>老婦人、洛陽百姓、邱子靖
+            </p>
+            <p class="story-clue-detail detail-trigger hidden">
+              <span>觸發事件：</span>戰亂後的洛陽，人心浮動，觀音化為賣鏡老婦，高聲宣稱「此鏡能照善惡因果」。
+            </p>
+            <p class="story-clue-note hidden">
+              線索已全部顯示，可點下方按鈕展開完整故事。
+            </p>
+            <div class="centered-btn">
+              <button class="btn btn-ghost clue-next-btn hidden">展開完整故事</button>
+            </div>
+          </div>
+          <div class="story-content hidden">
+            <p><span class="label">① 背景：</span>戰亂後的洛陽，觀音化身老婦人，手持一面「照心寶鏡」上街賣，聲稱可照出人的善惡與前因後果。</p>
+            <p><span class="label">② 事件：</span>人們出三文錢依次照鏡，各自看到自己過去的行為與未來墮落的可能，驚懼不已。觀音最後顯相而去，留下三面觀音像：慈面、瞋面、忿面。</p>
+            <p><span class="label">③ 法相名稱：</span>三面觀音（遊戲三昧觀音，手持寶鏡）。</p>
+            <p><span class="label">④ 寓意：</span>很多痛苦不是外界造成，而是自己選擇、習慣、逃避累積而來。看清自己，才改得了自己。，雖然很痛，卻是成長必要的一步。</p>
+			<p><span class="label">故事簡述：</span>
+				洛陽出現一位賣鏡子的老太太，
+				說她的鏡子能照出人的善惡與未來。
+				大家以為她在唬爛，
+				卻一個個被鏡中的畫面嚇到——
+				有人看到自己曾經傷害別人的樣子，
+				有人看到將來後悔的模樣。
+
+				最後她顯出慈、瞋、忿三面觀音。</p>
+            <div class="centered-btn">
+			<p><span class="label">進一步思考：</span>哪一件事情事你一直再逃避的呢?一起下定決心來改變吧!</p>
+            <div class="centered-btn">
+              <button class="btn btn-primary story-next-btn">下一個故事</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card story-card hidden">
+          <div class="story-meta">故事 8：多寶觀音 —— 香梨木、貪心與被棄的法身</div>
+          <div class="story-clue" data-step="0">
+            <p class="story-clue-intro">輕點此區，依序揭開：關鍵詞 → 關鍵人物 → 觸發事件。</p>
+            <p class="story-clue-detail detail-keyword hidden">
+              <span>關鍵詞：</span>肥頭大耳、灰飛煙滅的財寶、香梨木佛身
+            </p>
+            <p class="story-clue-detail detail-people hidden">
+              <span>關鍵人物：</span>和尚、江北土匪、百姓
+            </p>
+            <p class="story-clue-detail detail-trigger hidden">
+              <span>觸發事件：</span>一位身載金銀的肥和尚行走江北，引來土匪覬覦，眾人目光都落在「財寶」上。
+            </p>
+            <p class="story-clue-note hidden">
+              線索已全部顯示，可點下方按鈕展開完整故事。
+            </p>
+            <div class="centered-btn">
+              <button class="btn btn-ghost clue-next-btn hidden">展開完整故事</button>
+            </div>
+          </div>
+          <div class="story-content hidden">
+            <p><span class="label">① 背景：</span>江北一帶民風貪財，觀音化肥頭大耳和尚，身載金銀寶物行走，引發土匪覬覦。</p>
+            <p><span class="label">② 事件：</span>土匪搶走財物，那些寶物變成灰。觀音留下的香梨木被雕成「多寶觀音像」，後來又被另一批盜賊偷走並丟入江中。</p>
+            <p><span class="label">③ 法相名稱：</span>多寶觀音（四面十八臂，象徵各種功德與寶物）。</p>
+            <p>
+              <span class="label">④ 寓意：</span>我們以為「值錢」的東西，其實可能是最易壞的幻影；真正的寶藏是能帶人離苦的智慧與慈悲。要問自己：真正想要的是什麼？
+            </p>
+			<p><span class="label">故事簡述：</span>
+				觀音化身一個珠光寶氣的大和尚。
+				盜匪搶走他的財寶，
+				一打開——全部變灰。
+				那些看起來「很值錢」的東西，
+				其實毫無意義。
+
+				後來那根香梨木被刻成多寶觀音，
+				又被丟進江裡，
+				但最後被善人潘和撈起，供在寺裡。</p>
+            <div class="centered-btn">
+			<p><span class="label">進一步思考：</span>哪些東西事情是你人生中不這麼重要的?哪些是你人生中真正重要的?</p>
+            <div class="centered-btn">
+              <button class="btn btn-primary story-next-btn">下一個故事</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card story-card hidden">
+          <div class="story-meta">故事 9：蓮臥觀音 × 潘和 —— 被撈起的法身</div>
+          <div class="story-clue" data-step="0">
+            <p class="story-clue-intro">輕點此區，依序揭開：關鍵詞 → 關鍵人物 → 觸發事件。</p>
+            <p class="story-clue-detail detail-keyword hidden">
+              <span>關鍵詞：</span>金陵善人、江口打撈、側臥蓮臺
+            </p>
+            <p class="story-clue-detail detail-people hidden">
+              <span>關鍵人物：</span>潘和、多寶觀音像、雞鳴寺僧人
+            </p>
+            <p class="story-clue-detail detail-trigger hidden">
+              <span>觸發事件：</span>潘和為無子一事憂心難安，夜裡夢見觀音指示他次日到江口打撈。
+            </p>
+            <p class="story-clue-note hidden">
+              線索已全部顯示，可點下方按鈕展開完整故事。
+            </p>
+            <div class="centered-btn">
+              <button class="btn btn-ghost clue-next-btn hidden">展開完整故事</button>
+            </div>
+          </div>
+          <div class="story-content hidden">
+            <p><span class="label">① 背景：</span>金陵善人潘和，開糧行、樂善好施，卻遲遲無子，很擔心沒後。</p>
+            <p><span class="label">② 事件：</span>觀音託夢，叫他次日到江口打撈，果然撈起被丟棄的多寶觀音像，並指示送往雞鳴寺，用石荷葉雕成蓮臺。因像略有損傷，只能「側臥」於蓮上。</p>
+            <p><span class="label">③ 法相名稱：</span>蓮臥觀音（斜臥在蓮葉之上）。</p>
+            <p><span class="label">④ 寓意：</span>看似被扔掉、丟棄、被否定，但當我們內心知道何謂真何謂假，那個價值就是我們自己決定的。</p>
+			<p><span class="label">故事簡述：</span>
+				觀音化身一個珠光寶氣的大和尚。
+				盜匪搶走他的財寶，
+				一打開——全部變灰。
+				那些看起來「很值錢」的東西，
+				其實毫無意義。
+
+				後來那根香梨木被刻成多寶觀音，
+				又被丟進江裡，
+				但最後被善人潘和撈起，供在寺裡。</p>
+            <div class="centered-btn">
+			<p><span class="label">進一步思考：</span>那些曾經被否定的地方，你是否願意重新撿起、檢視、定義屬於自己的價值?</p>
+            <div class="centered-btn">
+              <button class="btn btn-primary story-next-btn">下一個故事</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card story-card hidden">
+          <div class="story-meta">故事 10：白衣送子觀音 —— 願望以不同形式實現</div>
+          <div class="story-clue" data-step="0">
+            <p class="story-clue-intro">輕點此區，依序揭開：關鍵詞 → 關鍵人物 → 觸發事件。</p>
+            <p class="story-clue-detail detail-keyword hidden">
+              <span>關鍵詞：</span>白色圍棋子、求子心願
+            </p>
+            <p class="story-clue-detail detail-people hidden">
+              <span>關鍵人物：</span>潘和、潘和妻子、白衣觀音
+            </p>
+            <p class="story-clue-detail detail-trigger hidden">
+              <span>觸發事件：</span>同一個夢境裡，觀音將一顆白色棋子交給潘和，暗示「賜子因緣」。
+            </p>
+            <p class="story-clue-note hidden">
+              線索已全部顯示，可點下方按鈕展開完整故事。
+            </p>
+            <div class="centered-btn">
+              <button class="btn btn-ghost clue-next-btn hidden">展開完整故事</button>
+            </div>
+          </div>
+          <div class="story-content hidden">
+            <p><span class="label">① 背景：</span>同一夢中，觀音也給潘和一顆白色圍棋子，象徵「賜子」。</p>
+            <p><span class="label">② 事件：</span>潘和照指示供奉「白衣觀音像」，不久果真得一子。後人因此以「白衣抱子觀音像」來作為象徵。</p>
+            <p><span class="label">③ 法相名稱：</span>白衣送子觀音。</p>
+            <p><span class="label">④ 寓意：</span>其實抱子觀音僅是潘和以意為之，實際白衣觀音使表示純淨的菩提心呀!切勿因此而會錯意了。</p>
+            <div class="centered-btn">
+              <button class="btn btn-primary story-next-btn">下一個故事</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card story-card hidden">
+          <div class="story-meta">故事 11：灑水觀音 —— 姑蘇金人之難後的冤魂超度</div>
+          <div class="story-clue" data-step="0">
+            <p class="story-clue-intro">輕點此區，依序揭開：關鍵詞 → 關鍵人物 → 觸發事件。</p>
+            <p class="story-clue-detail detail-keyword hidden">
+              <span>關鍵詞：</span>金兵之亂、冤魂遍城、四十九日誦咒灑水
+            </p>
+            <p class="story-clue-detail detail-people hidden">
+              <span>關鍵人物：</span>化身美婦、姑蘇城冤魂、城中百姓
+            </p>
+            <p class="story-clue-detail detail-trigger hidden">
+              <span>觸發事件：</span>金兵入侵後，姑蘇城內屍橫遍野，怨氣沉重難消。
+            </p>
+            <p class="story-clue-note hidden">
+              線索已全部顯示，可點下方按鈕展開完整故事。
+            </p>
+            <div class="centered-btn">
+              <button class="btn btn-ghost clue-next-btn hidden">展開完整故事</button>
+            </div>
+          </div>
+          <div class="story-content hidden">
+            <p><span class="label">① 背景：</span>金兵入侵後，姑蘇城內冤死無數，怨氣沉重。</p>
+            <p><span class="label">② 事件：</span>觀音化為中年美婦，在石臺上誦《大悲心陀羅尼》，連續四十九日，以楊枝蘸甘露遍灑四方，超度孤魂。</p>
+            <p><span class="label">③ 法相名稱：</span>灑水觀音、楊柳觀音。</p>
+            <p><span class="label">④ 寓意：</span>我們要學習的是這慈悲之心，不忍人之苦，希望他人可以快樂的這一份心</p>
+			<p><span class="label">故事簡述：</span>
+				金兵入侵後，姑蘇滿城冤魂。
+				觀音化身婦人，
+				坐在石臺上連續 49 天誦咒、灑甘露，
+				替亡者洗去痛苦。
+
+				她說：「痛若不安葬，魂便不安。」</p>
+            <div class="centered-btn">
+			<p><span class="label">進一步思考：</span>哪一位聖賢仙佛之行誼是你想要學習效仿的呢?</p>
+            <div class="centered-btn">
+              <button class="btn btn-primary story-next-btn">下一個故事</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card story-card hidden">
+          <div class="story-meta">故事 12：水月觀音 —— 水中月影中的慈容</div>
+          <div class="story-clue" data-step="0">
+            <p class="story-clue-intro">輕點此區，依序揭開：關鍵詞 → 關鍵人物 → 觸發事件。</p>
+            <p class="story-clue-detail detail-keyword hidden">
+              <span>關鍵詞：</span>河水月影、七寶莊嚴、畫師傳像
+            </p>
+            <p class="story-clue-detail detail-people hidden">
+              <span>關鍵人物：</span>觀音、請見真容的眾人、畫師邱子靖
+            </p>
+            <p class="story-clue-detail detail-trigger hidden">
+              <span>觸發事件：</span>四十九日功德圓滿後，眾人渴望親見菩薩真身，虔誠請求。
+            </p>
+            <p class="story-clue-note hidden">
+              線索已全部顯示，可點下方按鈕展開完整故事。
+            </p>
+            <div class="centered-btn">
+              <button class="btn btn-ghost clue-next-btn hidden">展開完整故事</button>
+            </div>
+          </div>
+          <div class="story-content hidden">
+            <p><span class="label">① 背景：</span>四十九日功德圓滿後，眾人請求見菩薩真容。</p>
+            <p><span class="label">② 事件：</span>觀音指著河水說「菩薩在那裡」；眾人看見水中月影裡浮現七寶莊嚴的觀音身影，逐漸與月影融為一體，隨之隱沒。畫師邱子靖依此畫出著名的水月觀音。</p>
+            <p><span class="label">③ 法相名稱：</span>水月觀音。</p>
+            <p><span class="label">④ 寓意：</span>「看得見卻抓不住」的，是所有無常的事物——關係、名聲、情緒、青春。水月觀音在提醒：色即是空，空即是色，學會在變動中安住。</p>
+			<p><span class="label">故事簡述：</span>
+				金兵入侵後，姑蘇滿城冤魂。
+				觀音化身婦人，
+				坐在石臺上連續 49 天誦咒、灑甘露，
+				替亡者洗去痛苦。
+
+				她說：「痛若不安葬，魂便不安。」</p>
+            <div class="centered-btn">
+			<p><span class="label">進一步思考：</span>哪一位聖賢仙佛之行誼是你想要學習效仿的呢?</p>
+            <div class="centered-btn">
+              <button class="btn btn-primary story-next-btn">下一個故事</button>
+            </div>
+          </div>
+        </article>
+
+        <article class="card story-card hidden">
+          <div class="story-meta">故事 13：偈語救命 —— 賈一峰與錯殺之夜</div>
+          <div class="story-clue" data-step="0">
+            <p class="story-clue-intro">輕點此區，依序揭開：關鍵詞 → 關鍵人物 → 觸發事件。</p>
+            <p class="story-clue-detail detail-keyword hidden">
+              <span>關鍵詞：</span>四句偈語、危機、腦瓜兩半
+            </p>
+            <p class="story-clue-detail detail-people hidden">
+              <span>關鍵人物：</span>賈一峰、賈妻、鄰人
+            </p>
+            <p class="story-clue-detail detail-trigger hidden">
+              <span>觸發事件：</span>觀音於夢中傳四句偈語給賈一峰，他雖不明白意思，仍選擇牢記在心。
+            </p>
+            <p class="story-clue-note hidden">
+              線索已全部顯示，可點下方按鈕展開完整故事。
+            </p>
+            <div class="centered-btn">
+              <button class="btn btn-ghost clue-next-btn hidden">展開完整故事</button>
+            </div>
+          </div>
+          <div class="story-content hidden">
+            <p><span class="label">① 背景：</span>金陵藥店主人賈一峰心地善良、常讓貧病賒藥。妻子卻與鄰人有染。</p>
+            <p><span class="label">② 事件：</span>觀音託夢給他四句偈語：「逢橋莫停舟，逢油即抹頭，斗穀三升米，青蠅捧筆頭」，他因此避過斷橋之災，又因燈油抹頭，被仇人誤認為妻子，反而倖免於難。</p>
+            <p><span class="label">③ 後續：</span>欲知後事如何?且待下回分解。</p>
+            <!-- <p><span class="label">④ 寓意：</span>有時我們不會立刻懂生命給的暗示，但只要「願意記得、願意行動」，就可能在關鍵時刻被悄悄護住。</p> -->
+            <div class="centered-btn">
+              <button class="btn btn-primary story-next-btn">
+                開始互動提問（Vevox）
+              </button>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- 區塊 C：Vevox 互動說明 -->
+      <section id="vevox-section" class="section hidden">
+        <article class="card">
+          <h2>一起進入你的故事：請先加入 Vevox 即時互動</h2>
+          <div class="vevox-layout">
+            <div class="vevox-text">
+              <p>
+                接下來會有四個提問，讓大家點選群組內的連結。我們會透過 Vevox 收集匿名回應，之後大家一起來看看我們的人生疑問煩惱以及該如何解決呢?
+              </p>
+              <ol class="steps">
+                <li>請打開群組，點選連結，或在瀏覽器輸入：vevox.app。</li>
+                <li>進入後輸入會議 ID（170-155-669）。</li>
+                <li>加入後保持畫面開啟，準備作答。</li>
+              </ol>
+              <div class="centered-btn" style="text-align:left;margin-top:14px;">
+                <button id="vevox-ready-btn" class="btn btn-primary">
+                  我已經進入 Vevox，準備回答
+                </button>
+              </div>
+            </div>
+          </div>
+        </article>
+      </section>
+
+      <!-- 區塊 D：四個提問 -->
+      <section id="questions-section" class="section hidden">
+        <h2>用你的語言，回到自己的生命現場</h2>
+
+        <article class="question-card question-card-item hidden">
+          <h3>問題一</h3>
+          <p class="question-main">
+            最近一個月，最讓你在意、煩惱、掛心的事情是什麼？
+          </p>
+          <p class="question-hint">
+            請在 Vevox 選擇符合的選項。
+          </p>
+          <p class="vevox-hint">（請在 Vevox 上作答，不需要在本頁輸入。）</p>
+          <div class="centered-btn">
+            <button class="btn btn-primary question-next-btn">下一題</button>
+          </div>
+        </article>
+
+        <article class="question-card question-card-item hidden">
+          <h3>問題二</h3>
+          <p class="question-main">
+            請用「一個字」形容你現在（此時此刻）的人生狀態。
+          </p>
+          <p class="question-hint">
+            例如：迷、撐、忙、追、亂、勇、熬……請跟著直覺，請選最貼近的那一個字。
+          </p>
+          <p class="vevox-hint">（請在 Vevox 選擇符合的選項，不需要在本頁輸入。）</p>
+          <div class="centered-btn">
+            <button class="btn btn-primary question-next-btn">下一題</button>
+          </div>
+        </article>
+
+        <article class="question-card question-card-item hidden">
+          <h3>問題三</h3>
+          <p class="question-main">
+            在今天的故事中，你覺得——你現在最像哪一種情境？
+          </p>
+          <p class="question-hint">
+            請在 Vevox 選擇符合的選項：你覺得自己比較像「哪一個觀音故事／哪一種法相的情境」。
+          </p>
+          <p class="vevox-hint">（請在 Vevox 上作答，不需要在本頁輸入。）</p>
+          <div class="centered-btn">
+            <button class="btn btn-primary question-next-btn">下一題</button>
+          </div>
+        </article>
+
+        <article class="question-card question-card-item hidden">
+          <h3>問題四</h3>
+          <p class="question-main">
+            在目前的人生當中，你覺得自己正面臨哪些狀態呢？
+          </p>
+          <p class="question-hint">
+            請在 Vevox 選擇符合的選項。
+          </p>
+          <p class="vevox-hint">（請在 Vevox 上作答，不需要在本頁輸入。）</p>
+          <div class="centered-btn">
+            <button class="btn btn-primary question-next-btn">進入最後分享</button>
+          </div>
+        </article>
+      </section>
+
+      <!-- 區塊 E：最後寫下自己的煩惱與祝福 -->
+      <section id="final-section" class="section hidden">
+        <article class="final-card">
+          <h2>最後一個小練習：寫下你此刻最想釐清的事</h2>
+          <p>
+            聽完故事、也看過大家的回答之後，請你給自己一分鐘，安靜地想一想：
+          </p>
+          <ul>
+            <li>現在最想解決的煩惱是什麼？</li>
+            <li>最想釐清、弄清楚的事情是什麼？</li>
+          </ul>
+          <p>
+            請把它寫在紙上，折起來。等等我們會隨機選擇一個進行給予建議、祝福或是支持，
+			完成後將自己的拿回來，
+			願意的話可以分享出來，我們一起來成為更好的人。
+          </p>
+
+          <div class="write-zone">
+            <div class="write-icon">✍️</div>
+            <div>
+              這裡留給你一個安靜的空間。<br />
+              想像自己正拿起一支筆，慢慢地，把最在意的那一件事寫下來——不用很完美，只要是真實的就好。
+            </div>
+          </div>
+
+          <div class="final-footer">
+            願每一個被看見的煩惱，都有機會被溫柔地擁抱與轉化。
+          </div>
+        </article>
+      </section>
+    </main>
+  </div>
+
+  <script>
+  (function () {
+    // 區塊與狀態
+    const storiesSection = document.getElementById("stories-section");
+    const storyCards = Array.from(document.querySelectorAll(".story-card"));
+    const storyProgress = document.getElementById("story-progress");
+    const enterStoryBtn = document.getElementById("enter-story-btn");
+
+    const vevoxSection = document.getElementById("vevox-section");
+    const vevoxReadyBtn = document.getElementById("vevox-ready-btn");
+
+    const questionsSection = document.getElementById("questions-section");
+    const questionCards = Array.from(
+      document.querySelectorAll(".question-card-item")
+    );
+    const finalSection = document.getElementById("final-section");
+
+    let currentStoryIndex = -1;
+    let currentQuestionIndex = -1;
+
+    // ✅ 捲動修正：讓卡片更貼近畫面最上方
+    function scrollToElement(el) {
+  if (!el) return;
+
+  // 這行是最關鍵的 —— 讓該元素貼緊 viewport 頂端
+  el.scrollIntoView({
+    behavior: 'smooth',
+    block: 'start'  
+  });
+
+  // 若需要微調上方留白可加 margin-top 或 scrollBy
+  // setTimeout(() => window.scrollBy({ top: 50, behavior: "smooth" }), 300);
+  setTimeout(() => window.scrollBy({ top: 100, behavior: "smooth" }), 200);
+
+}
+
+
+    function updateStoryProgress() {
+      const total = storyCards.length;
+      const current = currentStoryIndex + 1;
+      storyProgress.textContent = "故事 " + current + " / " + total;
+    }
+
+    function showNextStory() {
+      // 標記前一張故事為完成狀態
+      if (currentStoryIndex >= 0 && currentStoryIndex < storyCards.length) {
+        storyCards[currentStoryIndex].classList.add("completed");
+      }
+
+      currentStoryIndex++;
+
+      if (currentStoryIndex < storyCards.length) {
+        const card = storyCards[currentStoryIndex];
+        card.classList.remove("hidden");
+        card.classList.add("fade-in");
+        updateStoryProgress();
+        scrollToElement(card); // 顯示時直接捲到故事卡片頂端
+      } else {
+        // 所有故事結束，顯示 Vevox 區塊
+        vevoxSection.classList.remove("hidden");
+        vevoxSection.classList.add("fade-in");
+        scrollToElement(vevoxSection);
+      }
+    }
+
+    // 進入故事按鈕
+    if (enterStoryBtn) {
+      enterStoryBtn.addEventListener("click", function () {
+        storiesSection.classList.remove("hidden");
+        if (currentStoryIndex === -1) {
+          showNextStory();
+        } else {
+          scrollToElement(storiesSection);
+        }
+      });
+    }
+
+    // 線索區：點擊依序顯示關鍵詞 → 關鍵人物 → 觸發事件，最後顯示按鈕
+    const clueBlocks = document.querySelectorAll(".story-clue");
+    clueBlocks.forEach(function (clue) {
+      let step = 0;
+      const keyword = clue.querySelector(".detail-keyword");
+      const people = clue.querySelector(".detail-people");
+      const trigger = clue.querySelector(".detail-trigger");
+      const note = clue.querySelector(".story-clue-note");
+      const btn = clue.querySelector(".clue-next-btn");
+      const card = clue.closest(".story-card");
+
+      clue.addEventListener("click", function (e) {
+        // 若點擊的是按鈕本身，就不再觸發線索切換
+        if (e.target.closest("button")) return;
+
+        step++;
+
+        if (step === 1 && keyword) {
+          keyword.classList.remove("hidden");
+        } else if (step === 2 && people) {
+          people.classList.remove("hidden");
+        } else if (step === 3) {
+          if (trigger) trigger.classList.remove("hidden");
+          if (note) note.classList.remove("hidden");
+          if (btn) btn.classList.remove("hidden");
+        } else {
+          // 超過第三次就不再切換
+          step = 3;
+        }
+
+        // 每次點擊線索，都把這張卡片捲到畫面上方
+        if (card) scrollToElement(card);
+      });
+
+      // 「展開完整故事」按鈕：顯示 story-content
+      if (btn) {
+        btn.addEventListener("click", function () {
+          const card = btn.closest(".story-card");
+          const content = card.querySelector(".story-content");
+          if (content && content.classList.contains("hidden")) {
+            content.classList.remove("hidden");
+            content.classList.add("fade-in");
+            btn.disabled = true;
+            scrollToElement(card);
+          }
+        });
+      }
+    });
+
+    // 每一個故事的「下一個故事」按鈕（內容 → 下個故事）
+    const storyNextButtons = document.querySelectorAll(".story-next-btn");
+    storyNextButtons.forEach(function (btn, index) {
+      btn.addEventListener("click", function () {
+        // 僅當點擊對應目前故事索引時才推進流程
+        if (index === currentStoryIndex) {
+          showNextStory();
+        }
+      });
+    });
+
+    // Vevox 進入按鈕
+    if (vevoxReadyBtn) {
+      vevoxReadyBtn.addEventListener("click", function () {
+        questionsSection.classList.remove("hidden");
+        currentQuestionIndex = 0;
+        if (questionCards[0]) {
+          questionCards[0].classList.remove("hidden");
+          questionCards[0].classList.add("fade-in");
+          scrollToElement(questionsSection);
+        }
+      });
+    }
+
+    // 問題切換
+    function showNextQuestion() {
+      if (
+        currentQuestionIndex >= 0 &&
+        currentQuestionIndex < questionCards.length
+      ) {
+        questionCards[currentQuestionIndex].classList.add("completed");
+      }
+
+      currentQuestionIndex++;
+
+      if (currentQuestionIndex < questionCards.length) {
+        const card = questionCards[currentQuestionIndex];
+        card.classList.remove("hidden");
+        card.classList.add("fade-in");
+        scrollToElement(card);
+      } else {
+        // 問題結束，顯示最後分享區塊
+        finalSection.classList.remove("hidden");
+        finalSection.classList.add("fade-in");
+        scrollToElement(finalSection);
+      }
+    }
+
+    const questionNextButtons =
+      document.querySelectorAll(".question-next-btn");
+    questionNextButtons.forEach(function (btn, index) {
+      btn.addEventListener("click", function () {
+        if (index === currentQuestionIndex) {
+          showNextQuestion();
+        }
+      });
+    });
+  })();
+</script>
+
+</body>
+</html>
